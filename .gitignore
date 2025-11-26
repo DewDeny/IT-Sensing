@@ -10,6 +10,10 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 
+# it's me Deny, i'm trying to ignore binary error in obj/Debug
+# might be redundant but worth trying
+/[Oo]bj/[Dd]ebug/
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
