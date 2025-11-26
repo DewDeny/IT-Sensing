@@ -6,14 +6,16 @@ public class ViewControl : MonoBehaviour
 {
     Vector2 mouseInitPos, mousePos;
     Vector3 cameraInitPos, cameraInitRot;
-  GameObject cameraObj;
+    GameObject cameraObj;
+    float cameraDistance;
 
     // Start is called before the first frame update
     void Start()
     {
         cameraInitPos = transform.localPosition;
         cameraObj = transform.GetChild(0).gameObject;
-    }
+        cameraDistance = cameraObj.transform.localPosition.z;
+            }
 
     // Update is called once per frame
     void Update()
@@ -33,7 +35,8 @@ public class ViewControl : MonoBehaviour
             thisRotation.eulerAngles = new Vector3(
             cameraInitRot.x - (mousePos.y - mouseInitPos.y) / 10,
             cameraInitRot.y + (mousePos.x - mouseInitPos.x) / 10,
-            cameraInitRot.z);
+            cameraInitRot.z
+            );
 
             transform.localEulerAngles = thisRotation.eulerAngles;
         }
@@ -55,10 +58,10 @@ public class ViewControl : MonoBehaviour
         }
 
         //Zooming control
-        cameraObj.transform.position = new Vector3(cameraObj.transform.position.x,
-            cameraObj.transform.position.y,
-            cameraObj.transform.position.z * Input.mouseScrollDelta.x);
-
-        Debug.Log(Input.mouseScrollDelta);
+        cameraDistance = cameraDistance - (Input.mouseScrollDelta.y * (cameraObj.transform.localPosition.z / 10));
+        cameraObj.transform.localPosition = new Vector3(cameraObj.transform.localPosition.x,
+                cameraObj.transform.localPosition.y,
+                cameraDistance
+                );
     }
 }
