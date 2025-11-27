@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AutoResize.cs" />
+    <Compile Include="Assets\Scripts\AutoMenuArrange.cs" />
     <Compile Include="Assets\Scripts\ViewControl.cs" />
   </ItemGroup>
   <ItemGroup>

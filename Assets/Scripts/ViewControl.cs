@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ViewControl : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class ViewControl : MonoBehaviour
     Vector3 cameraInitPos, cameraInitRot;
     GameObject cameraObj;
     float cameraDistance;
+    public bool moveWorld, stickMouse;
+    List<RaycastResult> list;
 
     // Start is called before the first frame update
     void Start()
@@ -15,19 +18,38 @@ public class ViewControl : MonoBehaviour
         cameraInitPos = transform.localPosition;
         cameraObj = transform.GetChild(0).gameObject;
         cameraDistance = cameraObj.transform.localPosition.z;
-            }
+    }
 
     // Update is called once per frame
     void Update()
     {
+        if (!stickMouse)
+        {
+            PointerEventData pointerData = new PointerEventData(EventSystem.current);
+            pointerData.position = Input.mousePosition;
+            list = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(pointerData, list);
+
+            if (list.Count == 0)
+                moveWorld = true;
+            else
+                moveWorld = false;
+        }
+
         //Rotation control
         if (Input.GetMouseButtonDown(0))
+        {
             mouseInitPos = Input.mousePosition;
+            stickMouse = true;
+        }
 
         if (Input.GetMouseButtonUp(0))
+        {
             cameraInitRot = transform.localEulerAngles;
+            stickMouse = false;
+        }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && moveWorld)
         {
             mousePos = Input.mousePosition;
 
@@ -43,12 +65,18 @@ public class ViewControl : MonoBehaviour
 
         //Strafing control
         if (Input.GetMouseButtonDown(1))
+        {
             mouseInitPos = Input.mousePosition;
+            stickMouse = true;
+        }
 
         if (Input.GetMouseButtonUp(1))
+        {
             cameraInitPos = transform.localPosition;
+            stickMouse = false;
+        }
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1) && moveWorld)
         {
             mousePos = Input.mousePosition;
 
@@ -59,9 +87,10 @@ public class ViewControl : MonoBehaviour
 
         //Zooming control
         cameraDistance = cameraDistance - (Input.mouseScrollDelta.y * (cameraObj.transform.localPosition.z / 10));
-        cameraObj.transform.localPosition = new Vector3(cameraObj.transform.localPosition.x,
-                cameraObj.transform.localPosition.y,
-                cameraDistance
-                );
+        cameraObj.transform.localPosition = new Vector3(
+            cameraObj.transform.localPosition.x,
+            cameraObj.transform.localPosition.y,
+            cameraDistance
+            );
     }
 }
