@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\AutoResize.cs" />
     <Compile Include="Assets\Scripts\PointCoordinateTag.cs" />
     <Compile Include="Assets\Scripts\AutoMenuArrange.cs" />
+    <Compile Include="Assets\Scripts\CoordTagger.cs" />
     <Compile Include="Assets\Scripts\ToolPoint2.cs" />
     <Compile Include="Assets\Scripts\ViewControl.cs" />
   </ItemGroup>

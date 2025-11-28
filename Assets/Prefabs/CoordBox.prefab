@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 945069397891192360}
   - component: {fileID: 6927521767053159083}
   - component: {fileID: 1404412829472160406}
-  - component: {fileID: 8569614171583084267}
   - component: {fileID: 1659880224766339320}
   - component: {fileID: 216535146548038836}
+  - component: {fileID: 8551151198244112996}
   m_Layer: 2
   m_Name: CoordBox
   m_TagString: Untagged
@@ -79,20 +79,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8569614171583084267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4111086965906881106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8133c4fc6093f154e830c88e09735de7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointCurrent: {fileID: 0}
-  pointCoordNumber: {x: 0, y: 0, z: 0}
 --- !u!114 &1659880224766339320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +119,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!114 &8551151198244112996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111086965906881106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35cc1ef55bcab94c9903610d7b4ef20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointPlaced: {fileID: 0}
+  placed: 0
 --- !u!1 &6059182774639545267
 GameObject:
   m_ObjectHideFlags: 0

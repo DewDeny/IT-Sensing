@@ -408,6 +408,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.0.62f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/Scripts/AutoMenuArrange.cs"
 "Assets/Scripts/AutoResize.cs"
+"Assets/Scripts/CoordTagger.cs"
 "Assets/Scripts/PointCoordinateTag.cs"
 "Assets/Scripts/PointTagger2.cs"
 "Assets/Scripts/ToolPoint.cs"

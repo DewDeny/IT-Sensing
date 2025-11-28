@@ -3,9 +3,9 @@ using UnityEngine.InputSystem.HID;
 
 public class ToolPoint2 : MonoBehaviour
 {
-    public GameObject pointPref;
-    public Canvas pointCanvas;
-    GameObject pointBeingDragged;
+    public GameObject pointPref, coordPref;
+    public Canvas pointCanvas, coordCanvas;
+    GameObject pointBeingDragged, coordBeingDragged;
     Vector3 hitPos;
     public bool startPointing;
 
@@ -24,13 +24,13 @@ public class ToolPoint2 : MonoBehaviour
         {
             hitPos = hit.point;
             pointBeingDragged.GetComponent<PointTagger2>().pointWorldCoord = hitPos;
-
-            pointBeingDragged.transform.position = Input.mousePosition;
+            //pointBeingDragged.transform.position = Input.mousePosition;
         }
 
         if (Input.GetMouseButtonDown(0) && startPointing)
         {
-            pointBeingDragged.GetComponent<PointTagger2>().placed = true;
+            //   pointBeingDragged.GetComponent<PointTagger2>().placed = true;
+            coordBeingDragged.GetComponent<CoordTagger>().placed = true;
             startPointing = false;
         }
     }
@@ -39,6 +39,8 @@ public class ToolPoint2 : MonoBehaviour
     {
         Vector3 hidePos = Camera.main.transform.position - Vector3.forward * 10;
         pointBeingDragged = Instantiate(pointPref, hidePos, Quaternion.identity, pointCanvas.transform);
+        coordBeingDragged = Instantiate(coordPref, hidePos, Quaternion.identity, coordCanvas.transform);
+        coordBeingDragged.GetComponent<CoordTagger>().pointPlaced = pointBeingDragged;
         startPointing = true;
     }
 }
