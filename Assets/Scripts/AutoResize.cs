@@ -6,7 +6,7 @@ public class AutoResize : MonoBehaviour
 {
     float menuSize;
     int buttonCount;
-        
+            
     // Start is called before the first frame update
     void Start()
     {
