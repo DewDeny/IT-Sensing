@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 102954419}
   - component: {fileID: 102954418}
   m_Layer: 5
-  m_Name: Canvas Point
+  m_Name: Canvas Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2167,8 +2167,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointPref: {fileID: 6953083798373639904, guid: 6c4002bd97e2cee4d863f869edbfb846, type: 3}
   coordPref: {fileID: 4111086965906881106, guid: a31ef93afb1a8a84fa205caf1b4a1376, type: 3}
+  distancePref: {fileID: 4111086965906881106, guid: e6296e1faf7090044b81911f88e9b362, type: 3}
   pointCanvas: {fileID: 102954420}
-  coordCanvas: {fileID: 1330575366}
+  tagCanvas: {fileID: 1330575366}
   startPointing: 0
 --- !u!1 &637992222
 GameObject:
@@ -4408,6 +4409,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 0adc7d73737855a4bb5cffeb87ab3d36, type: 3}
+    - target: {fileID: 2776147246548297398, guid: 3427a260b605b244d944ca7cc7e440f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 629271924}
+    - target: {fileID: 2776147246548297398, guid: 3427a260b605b244d944ca7cc7e440f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Measure_Distance
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776147246548297398, guid: 3427a260b605b244d944ca7cc7e440f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Tool_Point, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776147246548297398, guid: 3427a260b605b244d944ca7cc7e440f1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4157741753489199441, guid: 3427a260b605b244d944ca7cc7e440f1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4683,7 +4700,7 @@ GameObject:
   - component: {fileID: 1330575365}
   - component: {fileID: 1330575364}
   m_Layer: 5
-  m_Name: Canvas Coord
+  m_Name: Canvas Tags
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5656,11 +5673,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2776147246548297398, guid: 3427a260b605b244d944ca7cc7e440f1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartPointing
+      value: Measure_Point
       objectReference: {fileID: 0}
     - target: {fileID: 2776147246548297398, guid: 3427a260b605b244d944ca7cc7e440f1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ToolPoint2, Assembly-CSharp
+      value: Tool_Point, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2776147246548297398, guid: 3427a260b605b244d944ca7cc7e440f1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -6448,8 +6465,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -133.26495, y: 0.000045776367}
-  m_SizeDelta: {x: 58.870102, y: -19.130001}
+  m_AnchoredPosition: {x: -131.18294, y: -3.2534027}
+  m_SizeDelta: {x: 56.3163, y: -21.493}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1763065131
 MonoBehaviour:
