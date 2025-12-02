@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -93,5 +94,27 @@ public class ViewControl : MonoBehaviour
             cameraObj.transform.localPosition.y,
             cameraDistance
             );
+    }
+
+    public void View_Change(int viewAngle)
+    {
+        switch (viewAngle)
+        {
+            case 1:
+                transform.eulerAngles = new Vector3(0, 90, 0);
+                break;
+            case 2:
+                transform.eulerAngles = new Vector3(0, -90, 0);
+                break;
+            case 3:
+                transform.eulerAngles = new Vector3(0, 0, 0);
+                break;
+            case 4:
+                transform.eulerAngles = new Vector3(0, 180, 0);
+                break;
+            case 5:
+                transform.eulerAngles = new Vector3(90, 0, 0);
+                break;
+        }
     }
 }

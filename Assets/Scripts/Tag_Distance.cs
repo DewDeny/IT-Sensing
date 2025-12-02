@@ -4,6 +4,7 @@ using UnityEngine;
 public class Tag_Distance : MonoBehaviour
 {
     public GameObject[] pointsPlaced;
+
     public bool placed = false;
     TextMeshProUGUI txt;
 
@@ -11,7 +12,6 @@ public class Tag_Distance : MonoBehaviour
     void Start()
     {
         txt = transform.GetChild(0).transform.GetComponent<TextMeshProUGUI>();
-        // pointsPlaced = new GameObject[2];
     }
 
     // Update is called once per frame

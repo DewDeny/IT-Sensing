@@ -65,12 +65,14 @@
     <Compile Include="Assets\Scripts\Tag_Line.cs" />
     <Compile Include="Assets\Scripts\Tag_Point.cs" />
     <Compile Include="Assets\Scripts\unused\PointCoordinateTag.cs" />
+    <Compile Include="Assets\Scripts\Tag_Angle.cs" />
     <Compile Include="Assets\Scripts\unused\ToolPoint.cs" />
     <Compile Include="Assets\Scripts\AutoResize.cs" />
     <Compile Include="Assets\Scripts\AutoMenuArrange.cs" />
     <Compile Include="Assets\Scripts\Tag_Coord.cs" />
     <Compile Include="Assets\Scripts\Tag_Distance.cs" />
     <Compile Include="Assets\Scripts\ViewControl.cs" />
+    <Compile Include="Assets\Scripts\Tag_LineGreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

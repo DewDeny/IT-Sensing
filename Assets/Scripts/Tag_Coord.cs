@@ -5,6 +5,7 @@ public class Tag_Coord : MonoBehaviour
 {
     public GameObject pointPlaced;
     Vector3 pointWorldCoor;
+
     public bool placed = false;
     TextMeshProUGUI txt;
 

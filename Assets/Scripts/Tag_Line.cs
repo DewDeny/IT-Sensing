@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Tag_Line : MonoBehaviour
 {
-    RectTransform rectTransform;
     public GameObject[] pointsPlaced;
- public   float lineDistance, rot;
+    RectTransform rectTransform;
+    public float lineDistance, rot;
 
     void Start()
     {
-      rectTransform = GetComponent<RectTransform>();
+        rectTransform = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class Tag_Line : MonoBehaviour
             lineDistance = Vector2.Distance(pointsPlaced[1].transform.position, pointsPlaced[0].transform.position);
             rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, lineDistance);
 
-             rot = Vector2.SignedAngle(pointsPlaced[0].transform.up, (pointsPlaced[1].transform.position- pointsPlaced[0].transform.position));
+            rot = Vector2.SignedAngle(pointsPlaced[0].transform.up, (pointsPlaced[1].transform.position - pointsPlaced[0].transform.position));
             transform.eulerAngles = new Vector3(0, 0, rot);
         }
     }
