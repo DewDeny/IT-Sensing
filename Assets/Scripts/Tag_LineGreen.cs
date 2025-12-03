@@ -4,7 +4,7 @@ using static Unity.VisualScripting.Member;
 
 public class Tag_LineGreen : MonoBehaviour
 {
-    GameObject[] pointsPlaced;
+   public GameObject[] pointsPlaced;
     public Vector3 sourceWorldPos, targetWorldPos, targetPseudoPos;
     Vector2 posSource, posTarget;
     RectTransform rectTransform;
@@ -14,9 +14,6 @@ public class Tag_LineGreen : MonoBehaviour
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        pointsPlaced = new GameObject[2];
-
-        //  posSource = pointPlaced.transform.position;
     }
 
     // Update is called once per frame
@@ -53,6 +50,7 @@ public class Tag_LineGreen : MonoBehaviour
 
             rot = Vector2.SignedAngle(Vector2.up, (posTarget - posSource));
             transform.eulerAngles = new Vector3(0, 0, rot);
+
         }
     }
 

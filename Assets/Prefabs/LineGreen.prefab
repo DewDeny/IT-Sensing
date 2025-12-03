@@ -88,5 +88,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953da1bd5672a7d42ae0e178befe6fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointsPlaced:
+  - {fileID: 0}
+  - {fileID: 0}
+  sourceWorldPos: {x: 0, y: 0, z: 0}
+  targetWorldPos: {x: 0, y: 0, z: 0}
+  targetPseudoPos: {x: 0, y: 0, z: 0}
   lineDistance: 0
   rot: 0

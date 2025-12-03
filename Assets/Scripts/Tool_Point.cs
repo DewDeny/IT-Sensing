@@ -5,10 +5,10 @@ using UnityEngine.InputSystem.HID;
 public class Tool_Point : MonoBehaviour
 {
     //Base functions
-    public GameObject pointPref, coordPref, distancePref, anglePref,linePref,lineGreenPref;
+    public GameObject pointPref, coordPref, distancePref, anglePref, linePref, lineGreenPref;
     public GameObject pointsGroup, tagsGroup;
     GameObject pointBeingDragged, tagBeingDragged, lineBeingDragged;
-  public  GameObject[] temp_PointStorage,temp_TagStorage;
+    public GameObject[] temp_PointStorage, temp_TagStorage;
     int tool;
     Vector3 hitPos;
     bool startPointing;
@@ -48,7 +48,7 @@ public class Tool_Point : MonoBehaviour
                 case 1:
                     if (pointAmount == 1)
                     {
-                        for(int i = 0; i < 3; i++)
+                        for (int i = 0; i < 3; i++)
                         {
                             temp_TagStorage[i].GetComponent<Tag_Angle>().placed = true;
                         }
@@ -70,8 +70,8 @@ public class Tool_Point : MonoBehaviour
             {
                 for (int i = 0; i < 3; i++)
                 {
-                    temp_PointStorage[i]=null;
-                    temp_TagStorage[i]=null;
+                    temp_PointStorage[i] = null;
+                    temp_TagStorage[i] = null;
                 }
 
                 pointBeingDragged = null;
@@ -84,7 +84,7 @@ public class Tool_Point : MonoBehaviour
                 StartPointing(tool);
         }
 
-        if (Input.GetMouseButtonDown(1) | Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetMouseButtonDown(1) | Input.GetKeyDown(KeyCode.Escape)) //Cancelling the marker
         {
             Destroy(pointBeingDragged);
             Destroy(tagBeingDragged);
@@ -174,18 +174,23 @@ public class Tool_Point : MonoBehaviour
                 {
                     lineBeingDragged.GetComponent<Tag_Line>().pointsPlaced[1] = pointBeingDragged;
 
-                    lineBeingDragged = Instantiate(lineGreenPref, hidePos, Quaternion.identity, pointsGroup.transform); //green line
-                    lineBeingDragged.GetComponent<Tag_LineGreen>().SourceTargetDirection(temp_PointStorage[0], temp_PointStorage[1], 2);
-                // problem happened here
-                //use direct reference instead of calling method
-                    Debug.Log("Green line moved!");
+                    lineBeingDragged = Instantiate(lineGreenPref, hidePos, Quaternion.identity, pointsGroup.transform); //green line 
+                    Tag_LineGreen tagLineGreen = lineBeingDragged.GetComponent<Tag_LineGreen>();
+                    tagLineGreen.SourceTargetDirection(temp_PointStorage[0], temp_PointStorage[1], 2); //horizontal
+
+                    temp_TagStorage[0] = lineBeingDragged;
 
                     lineBeingDragged = Instantiate(lineGreenPref, hidePos, Quaternion.identity, pointsGroup.transform); //green line
-                    lineBeingDragged.GetComponent<Tag_LineGreen>().SourceTargetDirection(temp_PointStorage[1], temp_PointStorage[0], 1);
+                    tagLineGreen = lineBeingDragged.GetComponent<Tag_LineGreen>();
+                    tagLineGreen.SourceTargetDirection(temp_PointStorage[1], temp_PointStorage[0], 1); //vertical
+
+                    temp_TagStorage[1] = lineBeingDragged;
 
                     tagBeingDragged = Instantiate(distancePref, hidePos, Quaternion.identity, tagsGroup.transform);
-                    tagBeingDragged.GetComponent<Tag_Distance>().pointsPlaced[0] = pointBeingDragged;
-                    tagBeingDragged.GetComponent<Tag_Distance>().pointsPlaced[1] = pointBeingDragged;
+                    tagBeingDragged.GetComponent<Tag_Distance>().isHeight = true;
+                    tagBeingDragged.GetComponent<Tag_Distance>().soloPosObject = lineBeingDragged;
+                    tagBeingDragged.GetComponent<Tag_Distance>().pointsPlaced[0] = temp_PointStorage[0];
+                    tagBeingDragged.GetComponent<Tag_Distance>().pointsPlaced[1] = temp_PointStorage[1];
                 }
                 break;
         }
@@ -193,7 +198,6 @@ public class Tool_Point : MonoBehaviour
     }
 
     // ACCESSED BY BUTTONS
-
     public void Measure_Angle()
     {
         pointAmount = 3;
