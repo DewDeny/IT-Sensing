@@ -193,6 +193,14 @@ public class Tool_Point : MonoBehaviour
                     tagBeingDragged.GetComponent<Tag_Distance>().pointsPlaced[1] = temp_PointStorage[1];
                 }
                 break;
+
+            case 5:
+
+                pointBeingDragged = Instantiate(pointPref, hidePos, Quaternion.identity, pointsGroup.transform);
+                int temp_SlotNumCircle = 2 - pointAmount;
+                temp_PointStorage[temp_SlotNumCircle] = pointBeingDragged;
+
+                break;
         }
         startPointing = true;
     }
@@ -220,6 +228,12 @@ public class Tool_Point : MonoBehaviour
     {
         pointAmount = 2;
         StartPointing(4);
+    }
+
+    public void Measure_Circle()
+    {
+        pointAmount = 3;
+        StartPointing(5);
     }
 
     public void Measure_Remove_All()

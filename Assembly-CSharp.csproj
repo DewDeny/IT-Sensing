@@ -72,8 +72,10 @@
     <Compile Include="Assets\Scripts\CircleGraphic.cs" />
     <Compile Include="Assets\Scripts\AutoResize.cs" />
     <Compile Include="Assets\Scripts\AutoMenuArrange.cs" />
+    <Compile Include="Assets\Input System\ViewController.cs" />
     <Compile Include="Assets\Scripts\Tag_Coord.cs" />
     <Compile Include="Assets\Scripts\Tag_Distance.cs" />
+    <Compile Include="Assets\Scripts\PH_circle3D.cs" />
     <Compile Include="Assets\Scripts\ViewControl.cs" />
     <Compile Include="Assets\Scripts\Tag_LineGreen.cs" />
   </ItemGroup>

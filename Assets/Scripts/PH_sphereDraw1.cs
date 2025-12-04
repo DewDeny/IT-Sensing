@@ -42,14 +42,9 @@ public class PH_sphereDraw : MonoBehaviour
         sample.transform.localScale = new Vector3(radius * 2, radius * 2, radius * 2);
 
         //rotation
-        Vector3 _direction = (dotsPos[1] - circleCenter).normalized;
-        Quaternion _lookRotation = Quaternion.LookRotation(_direction);
-        Quaternion _toTheSide = Quaternion.LookRotation(Vector3.down);
-
-        Vector3 tilt_dir = (dotsPos[2] - dotsPos[0]).normalized;
-        Quaternion tilt_lookRot=Quaternion.LookRotation(tilt_dir);
-
-        // sample.transform.rotation = new Quaternion(_lookRotation.x,tilt_lookRot.y,_toTheSide.z,_lookRotation.w);
-        sample.transform.rotation = _lookRotation * _toTheSide * tilt_lookRot;
+        Vector3 mid_direction = (dotsPos[1] - circleCenter).normalized;
+        Vector3 first_direction= (dotsPos[0] - circleCenter).normalized;
+        Quaternion _lookRotation = Quaternion.LookRotation(mid_direction, first_direction); 
+        sample.transform.rotation = _lookRotation ;
     }
 }
