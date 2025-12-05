@@ -14,6 +14,13 @@ public class Tool_Point : MonoBehaviour
     bool startPointing;
     int pointAmount;
 
+    //----------------------------------------------
+    //Notes & Links
+    //https://github.com/CristobalBL/pointcloud-unity-example githubpoint cloud thingy??
+    //https://www.lidarusa.com/sample-data.html USA lidar data & viewer
+    //https://discussions.unity.com/t/import-point-cloud-to-unity/736241/ Putting e57(?) file into array for Particle usage(?)
+    //----------------------------------------------
+
     // Start is called blablabla
     void Start()
     {

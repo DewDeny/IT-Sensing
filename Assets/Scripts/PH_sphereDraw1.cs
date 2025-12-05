@@ -11,9 +11,14 @@ public class PH_sphereDraw : MonoBehaviour
     public Vector3[] dotsPos;
     public Vector3 circleCenter;
 
+    //2d circle 3d rotation test
+    public GameObject circleScrTag;
+    RectTransform circleScrRect;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        circleScrRect=circleScrTag.GetComponent<RectTransform>();   
     }
 
     // Update is called once per frame
@@ -38,7 +43,6 @@ public class PH_sphereDraw : MonoBehaviour
         float radius = Vector3.Distance(circleCenter, dotsPos[0]);
 
         sample.transform.position = circleCenter;
-
         sample.transform.localScale = new Vector3(radius * 2, radius * 2, radius * 2);
 
         //rotation
@@ -46,5 +50,17 @@ public class PH_sphereDraw : MonoBehaviour
         Vector3 first_direction= (dotsPos[0] - circleCenter).normalized;
         Quaternion _lookRotation = Quaternion.LookRotation(mid_direction, first_direction); 
         sample.transform.rotation = _lookRotation ;
+
+        //2D circle
+        Vector2 circleScrCenter = Camera.main.WorldToScreenPoint(circleCenter);
+        Vector3 pseudoPoint = circleCenter + (Vector3.up * radius);
+        Vector2 circleScrRim = Camera.main.WorldToScreenPoint(pseudoPoint);
+        float circleScrRadius = Vector2.Distance(circleScrCenter, circleScrRim);
+
+        Quaternion circleScrCorrectiveAngle = Quaternion.Euler(90,0,0);
+
+        circleScrTag.transform.position = circleScrCenter;
+        circleScrRect.sizeDelta = new Vector2(circleScrRadius*2, circleScrRadius*2);
+        circleScrTag.transform.rotation = sample.transform.rotation;
     }
 }
