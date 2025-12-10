@@ -3,7 +3,7 @@ using UnityEngine;
 public class PH_circle3D : MonoBehaviour
 {
     public float ThetaScale = 0.01f;
-    public float radius = 3f;
+    public float radius = 1;
     private int Size;
     private LineRenderer LineDrawer;
     private float Theta = 0f;
@@ -15,16 +15,19 @@ public class PH_circle3D : MonoBehaviour
 
     void Update()
     {
+        radius = transform.parent.transform.localScale.x/2;
+
         Theta = 0f;
         Size = (int)((1f / ThetaScale) + 1f);
-       // LineDrawer.SetVertexCount(Size);
-        LineDrawer.positionCount = Size;    
+        // LineDrawer.SetVertexCount(Size); (obsolete)
+        LineDrawer.positionCount = Size;
         for (int i = 0; i < Size; i++)
         {
             Theta += (2.0f * Mathf.PI * ThetaScale);
             float x = radius * Mathf.Cos(Theta);
             float y = radius * Mathf.Sin(Theta);
-            LineDrawer.SetPosition(i, new Vector3(x, y, 0));
+            Vector3 nodePos = new Vector3(x, y, 0);
+            LineDrawer.SetPosition(i, transform.position + transform.rotation * nodePos);
         }
     }
 }
