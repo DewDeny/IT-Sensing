@@ -62,11 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Tool_Point.cs" />
+    <Compile Include="Assets\Scripts\_CircleRenderer.cs" />
     <Compile Include="Assets\Scripts\Tag_Line.cs" />
     <Compile Include="Assets\Scripts\Tag_Point.cs" />
     <Compile Include="Assets\Scripts\unused\PointCoordinateTag.cs" />
-    <Compile Include="Assets\Scripts\PH_sphereDraw1.cs" />
-    <Compile Include="Assets\Scripts\PH_circleDraw.cs" />
+    <Compile Include="Assets\Scripts\Tag_Circle.cs" />
     <Compile Include="Assets\Scripts\Tag_Angle.cs" />
     <Compile Include="Assets\Scripts\unused\ToolPoint.cs" />
     <Compile Include="Assets\Scripts\CircleGraphic.cs" />
@@ -75,7 +75,6 @@
     <Compile Include="Assets\Input System\ViewController.cs" />
     <Compile Include="Assets\Scripts\Tag_Coord.cs" />
     <Compile Include="Assets\Scripts\Tag_Distance.cs" />
-    <Compile Include="Assets\Scripts\PH_circle3D.cs" />
     <Compile Include="Assets\Scripts\ViewControl.cs" />
     <Compile Include="Assets\Scripts\Tag_LineGreen.cs" />
   </ItemGroup>

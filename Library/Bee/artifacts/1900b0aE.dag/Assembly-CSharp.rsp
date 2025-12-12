@@ -411,10 +411,8 @@
 "Assets/Scripts/AutoMenuArrange.cs"
 "Assets/Scripts/AutoResize.cs"
 "Assets/Scripts/CircleGraphic.cs"
-"Assets/Scripts/PH_circle3D.cs"
-"Assets/Scripts/PH_circleDraw.cs"
-"Assets/Scripts/PH_sphereDraw1.cs"
 "Assets/Scripts/Tag_Angle.cs"
+"Assets/Scripts/Tag_Circle.cs"
 "Assets/Scripts/Tag_Coord.cs"
 "Assets/Scripts/Tag_Distance.cs"
 "Assets/Scripts/Tag_Line.cs"
@@ -424,6 +422,7 @@
 "Assets/Scripts/unused/PointCoordinateTag.cs"
 "Assets/Scripts/unused/ToolPoint.cs"
 "Assets/Scripts/ViewControl.cs"
+"Assets/Scripts/_CircleRenderer.cs"
 -langversion:9.0
 /deterministic
 /optimize+
