@@ -37,16 +37,6 @@ public class Tool_Point : MonoBehaviour
         {
             hitPos = hit.point;
             pointBeingDragged.GetComponent<Tag_Point>().pointWorldCoord = hitPos;
-
-            switch (tool)
-            {
-                case 4:
-                    if (pointAmount == 1)
-                    {
-
-                    }
-                    break;
-            }
         }
 
         if (Input.GetMouseButtonDown(0) && startPointing) //Placing down the point marker
