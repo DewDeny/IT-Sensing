@@ -62,14 +62,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Tool_Point.cs" />
-    <Compile Include="Assets\Scripts\PLY\PLYLoader.cs" />
+    <Compile Include="Assets\Scripts\PLY\messyahh\VoxelGrid.cs" />
+    <Compile Include="Assets\Scripts\PLY\PlyLoaderNeo.cs" />
     <Compile Include="Assets\Scripts\_CircleRenderer.cs" />
+    <Compile Include="Assets\Scripts\PLY\TileFolderLoader.cs" />
+    <Compile Include="Assets\Scripts\PLY\messyahh\PLYLoader.cs" />
     <Compile Include="Assets\Scripts\Tag_Line.cs" />
     <Compile Include="Assets\Scripts\Tag_Point.cs" />
     <Compile Include="Assets\Scripts\unused\PointCoordinateTag.cs" />
     <Compile Include="Assets\Scripts\Tag_Circle.cs" />
     <Compile Include="Assets\Scripts\LasFolder\LasLoading.cs" />
-    <Compile Include="Assets\Scripts\PLY\TileManager.cs" />
     <Compile Include="Assets\Scripts\Tag_Angle.cs" />
     <Compile Include="Assets\Scripts\unused\ToolPoint.cs" />
     <Compile Include="Assets\Scripts\CircleGraphic.cs" />
@@ -78,12 +80,15 @@
     <Compile Include="Assets\Scripts\AutoMenuArrange.cs" />
     <Compile Include="Assets\Scripts\LasFolder\LasTest.cs" />
     <Compile Include="Assets\Input System\ViewController.cs" />
+    <Compile Include="Assets\Scripts\PLY\messyahh\TileManager.cs" />
     <Compile Include="Assets\Scripts\Tag_Coord.cs" />
     <Compile Include="Assets\Scripts\Tag_Distance.cs" />
+    <Compile Include="Assets\Scripts\PLY\PlyLoadTest.cs" />
     <Compile Include="Assets\Scripts\LasFolder\BinaryPlyLoader.cs" />
-    <Compile Include="Assets\Scripts\PLY\VoxelGrid.cs" />
+    <Compile Include="Assets\Scripts\PLY\PlyVertex.cs" />
     <Compile Include="Assets\Scripts\ViewControl.cs" />
     <Compile Include="Assets\Scripts\Tag_LineGreen.cs" />
+    <Compile Include="Assets\Scripts\PLY\PointTileNeo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -92,6 +97,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Scripts\PLY\PointCloudShader.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
